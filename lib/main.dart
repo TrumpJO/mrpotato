@@ -13,16 +13,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  bool valueofarms = false;
-  bool valueofears = false;
-  bool valueofeye = false;
-  bool valueofeyebrow = false;
-  bool valueofglass = false;
-  bool valueofhat = false;
-  bool valueofmouth = false;
-  bool valueofmust = false;
-  bool valueofnose = false;
-  bool valueofshoes = false;
   bool visarms = false;
   bool visears = false;
   bool viseyebro = false;
@@ -96,11 +86,10 @@ class _MyAppState extends State<MyApp> {
                   style: TextStyle(fontSize: 20),
                 ),
                 Checkbox(
-                    value: valueofarms,
+                    value: visarms,
                     onChanged: (val) {
                       setState(() {
-                        visarms = true;
-                        valueofarms = val!;
+                        visarms = val!;
                       });
                     }),
                 SizedBox(
@@ -111,11 +100,10 @@ class _MyAppState extends State<MyApp> {
                   style: TextStyle(fontSize: 20),
                 ),
                 Checkbox(
-                    value: valueofeyebrow,
+                    value: viseyebro,
                     onChanged: (val) {
                       setState(() {
-                        viseyebro = true;
-                        valueofeyebrow = val!;
+                        viseyebro = val!;
                       });
                     }),
               ]),
@@ -128,11 +116,10 @@ class _MyAppState extends State<MyApp> {
                   style: TextStyle(fontSize: 20),
                 ),
                 Checkbox(
-                    value: valueofeye,
+                    value: viseye,
                     onChanged: (val) {
                       setState(() {
-                        viseye = true;
-                        valueofeye = val!;
+                        viseye = val!;
                       });
                     }),
                 SizedBox(
@@ -143,11 +130,10 @@ class _MyAppState extends State<MyApp> {
                   style: TextStyle(fontSize: 20),
                 ),
                 Checkbox(
-                    value: valueofears,
+                    value: visears,
                     onChanged: (val) {
                       setState(() {
-                        visears = true;
-                        valueofears = val!;
+                        visears = val!;
                       });
                     }),
               ]),
@@ -160,11 +146,10 @@ class _MyAppState extends State<MyApp> {
                   style: TextStyle(fontSize: 20),
                 ),
                 Checkbox(
-                    value: valueofglass,
+                    value: visglass,
                     onChanged: (val) {
                       setState(() {
-                        visglass = true;
-                        valueofglass = val!;
+                        visglass = val!;
                       });
                     }),
                 SizedBox(
@@ -175,11 +160,10 @@ class _MyAppState extends State<MyApp> {
                   style: TextStyle(fontSize: 20),
                 ),
                 Checkbox(
-                    value: valueofhat,
+                    value: vishat,
                     onChanged: (val) {
                       setState(() {
-                        vishat = true;
-                        valueofhat = val!;
+                        vishat = val!;
                       });
                     }),
               ]),
@@ -192,11 +176,10 @@ class _MyAppState extends State<MyApp> {
                   style: TextStyle(fontSize: 20),
                 ),
                 Checkbox(
-                    value: valueofmouth,
+                    value: vismouth,
                     onChanged: (val) {
                       setState(() {
-                        vismouth = true;
-                        valueofmouth = val!;
+                        vismouth = val!;
                       });
                     }),
                 SizedBox(
@@ -207,11 +190,10 @@ class _MyAppState extends State<MyApp> {
                   style: TextStyle(fontSize: 20),
                 ),
                 Checkbox(
-                    value: valueofmust,
+                    value: vismust,
                     onChanged: (val) {
                       setState(() {
-                        vismust = true;
-                        valueofmust = val!;
+                        vismust = val!;
                       });
                     }),
               ]),
@@ -224,11 +206,10 @@ class _MyAppState extends State<MyApp> {
                   style: TextStyle(fontSize: 20),
                 ),
                 Checkbox(
-                    value: valueofnose,
+                    value: visnose,
                     onChanged: (val) {
                       setState(() {
-                        visnose = true;
-                        valueofnose = val!;
+                        visnose = val!;
                       });
                     }),
                 SizedBox(
@@ -239,19 +220,10 @@ class _MyAppState extends State<MyApp> {
                   style: TextStyle(fontSize: 20),
                 ),
                 Checkbox(
-                    value: valueofshoes,
+                    value: visshose,
                     onChanged: (val) {
                       setState(() {
-                        visshose = true;
-                        valueofshoes = val!;
-                      });
-                    }),
-                Checkbox(
-                    value: !valueofshoes,
-                    onChanged: (val) {
-                      setState(() {
-                        visshose = false;
-                        valueofshoes = val!;
+                        visshose = val!;
                       });
                     }),
               ]),
