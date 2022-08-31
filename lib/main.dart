@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:list_ckbox/BodyPart.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,222 +14,92 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  bool visarms = false;
-  bool visears = false;
-  bool viseyebro = false;
-  bool viseye = false;
-  bool visglass = false;
-  bool vishat = false;
-  bool vismouth = false;
-  bool vismust = false;
-  bool visnose = false;
-  bool visshose = false;
+  bool def_BodyParts_HasNOTBeenConstructed = true;
+  Map def_BodyParts = {
+    "Body": "images/body.png",
+    "Arms": "images/arms.png",
+    "Eyes": "images/eyes.png",
+    "EyeBrows": "images/eyebrows.png",
+    "Ears": "images/ears.png",
+    "Glasses": "images/glasses.png",
+    "Hat": "images/hat.png",
+    "Mouth": "images/mouth.png",
+    "Mustache": "images/mustache.png",
+    "Nose": "images/nose.png",
+    "Shoes": "images/shoes.png",
+  };
+
   @override
   Widget build(BuildContext context) {
+    if (def_BodyParts_HasNOTBeenConstructed) {
+      Construct_BodyParts_Default(def_BodyParts);
+      def_BodyParts_HasNOTBeenConstructed = false;
+    }
+    potatoBodyIsAlways_Checked();
+
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-          appBar: AppBar(),
-          body: Container(
-              child: ListView(children: [
-            Stack(children: [
-              Visibility(
-                child: Image.asset("images/body.png"),
-                visible: true,
-              ),
-              Visibility(
-                child: Image.asset("images/arms.png"),
-                visible: visarms,
-              ),
-              Visibility(
-                child: Image.asset("images/ears.png"),
-                visible: visears,
-              ),
-              Visibility(
-                child: Image.asset("images/eyebrows.png"),
-                visible: viseyebro,
-              ),
-              Visibility(
-                child: Image.asset("images/eyes.png"),
-                visible: viseye,
-              ),
-              Visibility(
-                child: Image.asset("images/glasses.png"),
-                visible: visglass,
-              ),
-              Visibility(
-                child: Image.asset("images/hat.png"),
-                visible: vishat,
-              ),
-              Visibility(
-                child: Image.asset("images/mouth.png"),
-                visible: vismouth,
-              ),
-              Visibility(
-                child: Image.asset("images/mustache.png"),
-                visible: vismust,
-              ),
-              Visibility(
-                child: Image.asset("images/nose.png"),
-                visible: visnose,
-              ),
-              Visibility(
-                child: Image.asset("images/shoes.png"),
-                visible: visshose,
-              ),
-            ]),
-            Column(children: [
-              Row(children: [
-                SizedBox(
-                  width: 40,
-                ),
-                Text(
-                  "Arms",
-                  style: TextStyle(fontSize: 20),
-                ),
-                Checkbox(
-                    value: visarms,
-                    onChanged: (val) {
-                      setState(() {
-                        visarms = val!;
-                      });
-                    }),
-                SizedBox(
-                  width: 40,
-                ),
-                Text(
-                  "EyeBrows",
-                  style: TextStyle(fontSize: 20),
-                ),
-                Checkbox(
-                    value: viseyebro,
-                    onChanged: (val) {
-                      setState(() {
-                        viseyebro = val!;
-                      });
-                    }),
-              ]),
-              Row(children: [
-                SizedBox(
-                  width: 40,
-                ),
-                Text(
-                  "Eyes",
-                  style: TextStyle(fontSize: 20),
-                ),
-                Checkbox(
-                    value: viseye,
-                    onChanged: (val) {
-                      setState(() {
-                        viseye = val!;
-                      });
-                    }),
-                SizedBox(
-                  width: 40,
-                ),
-                Text(
-                  "Ears",
-                  style: TextStyle(fontSize: 20),
-                ),
-                Checkbox(
-                    value: visears,
-                    onChanged: (val) {
-                      setState(() {
-                        visears = val!;
-                      });
-                    }),
-              ]),
-              Row(children: [
-                SizedBox(
-                  width: 40,
-                ),
-                Text(
-                  "Glasses",
-                  style: TextStyle(fontSize: 20),
-                ),
-                Checkbox(
-                    value: visglass,
-                    onChanged: (val) {
-                      setState(() {
-                        visglass = val!;
-                      });
-                    }),
-                SizedBox(
-                  width: 40,
-                ),
-                Text(
-                  "Hat",
-                  style: TextStyle(fontSize: 20),
-                ),
-                Checkbox(
-                    value: vishat,
-                    onChanged: (val) {
-                      setState(() {
-                        vishat = val!;
-                      });
-                    }),
-              ]),
-              Row(children: [
-                SizedBox(
-                  width: 40,
-                ),
-                Text(
-                  "Mouth",
-                  style: TextStyle(fontSize: 20),
-                ),
-                Checkbox(
-                    value: vismouth,
-                    onChanged: (val) {
-                      setState(() {
-                        vismouth = val!;
-                      });
-                    }),
-                SizedBox(
-                  width: 40,
-                ),
-                Text(
-                  "Mustache",
-                  style: TextStyle(fontSize: 20),
-                ),
-                Checkbox(
-                    value: vismust,
-                    onChanged: (val) {
-                      setState(() {
-                        vismust = val!;
-                      });
-                    }),
-              ]),
-              Row(children: [
-                SizedBox(
-                  width: 40,
-                ),
-                Text(
-                  "nose",
-                  style: TextStyle(fontSize: 20),
-                ),
-                Checkbox(
-                    value: visnose,
-                    onChanged: (val) {
-                      setState(() {
-                        visnose = val!;
-                      });
-                    }),
-                SizedBox(
-                  width: 40,
-                ),
-                Text(
-                  "Shoes",
-                  style: TextStyle(fontSize: 20),
-                ),
-                Checkbox(
-                    value: visshose,
-                    onChanged: (val) {
-                      setState(() {
-                        visshose = val!;
-                      });
-                    }),
-              ]),
-            ])
-          ]))),
+        appBar: AppBar(
+          title: Text(
+            "Mr Potato!",
+            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+          ),
+          centerTitle: true,
+        ),
+        drawer: Drawer(),
+        body: ListView(
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: BodyPart.getAllStacksVisibility(),
+            ),
+            Column(
+              children: allCheckBoxesOf_BodyParts(),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  void Construct_BodyParts_Default(Map map) {
+    map.forEach(
+      (key, value) {
+        new BodyPart(name: key, imagePath: value);
+      },
+    );
+  }
+
+  void potatoBodyIsAlways_Checked({bool isChecked = true}) {
+    BodyPart.bodyParts[0].setVisibility(isChecked);
+  }
+
+  List<Widget> allCheckBoxesOf_BodyParts() {
+    List<Widget> allCheckBoxes = [];
+    BodyPart.bodyParts.forEach((element) {
+      allCheckBoxes.add(Checkbox_BodyPart(element));
+    });
+    return allCheckBoxes;
+  }
+
+  Widget Checkbox_BodyPart(BodyPart bodyPart) {
+    return CheckboxListTile(
+      secondary: Image.asset(
+        bodyPart.getImagePath(),
+        color: Colors.black,
+      ),
+      title: Text(
+        bodyPart.getName(),
+        style: TextStyle(fontSize: 20),
+      ),
+      value: bodyPart.getVisibility(),
+      onChanged: (val) {
+        setState(() {
+          bodyPart.setVisibility(val!);
+          print("\nNew: " + bodyPart.tempListDebug());
+        });
+      },
     );
   }
 }
